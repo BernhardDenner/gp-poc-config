@@ -1,0 +1,8 @@
+gpRancherMonitoring:
+  profile: small
+  customValues: |
+    rancher-monitoring:
+      prometheus:
+        annotations:
+          customvalues: hello
+

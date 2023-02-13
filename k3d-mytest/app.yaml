@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps
+  namespace: argocd
+spec:
+  destination:
+    namespace: apps
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - repoURL: https://github.com/BernhardDenner/gp-poc-config.git
+    targetRevision: HEAD
+    ref: values
+  - repoURL: https://github.com/BernhardDenner/gp-poc.git
+    path: apps
+    targetRevision: HEAD
+    helm:
+      parameters:
+      - name: "source.gpRepoUrl"
+        value: https://github.com/BernhardDenner/gp-poc.git
+      valueFiles:
+      - $values/k3d-mytest/values.yaml
