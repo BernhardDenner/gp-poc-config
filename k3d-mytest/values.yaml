@@ -6,4 +6,4 @@ gpRancherMonitoring:
         annotations:
           customvalues: hello
 
-system_domain: "gp.localhost"
+system_domain: "k3d-dev.local"
