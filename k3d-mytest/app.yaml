@@ -14,7 +14,7 @@ spec:
     ref: values
   - repoURL: https://github.com/BernhardDenner/gp-poc.git
     path: apps
-    targetRevision: HEAD
+    targetRevision: before-kc
     helm:
       parameters:
       - name: "source.gpRepoUrl"
